@@ -11,19 +11,24 @@
 
 <body>
     <header>
-        <h1>Pomodoro app</h1>
+        <h1>Pomodoro</h1>
     </header>
     <main>
         <div class="main-container">
             <div class="tabs">
-                <div class="selected tab">Pomodoro</div>
-                <div class="unselected tab">Short Break</div>
-                <div class="unselected tab">Long Break</div>
+                <div class="tab js-pomodoro js-tab0 selected" >Pomodoro</div>
+                <div class="tab js-short js-tab1" >Short Break</div>
+                <div class="tab js-long js-tab2" >Long Break</div>
             </div>
-            <div class='timer'>25:00</div>
-            <button>Pause</button>
+            <div class='timer'></div>
+            <button id="btn-start">Start</button>
+            <button id="btn-stop" >Stop</button>
+            <button id="btn-pause">Pause</button>
+            <button id="btn-continue">Continue</button>
+            <audio id='audio' src="Digital Watch Alarm Long.mp3"></audio>
         </div>
     </main>
+    <script src="index.js"></script>
 </body>
 
 </html>

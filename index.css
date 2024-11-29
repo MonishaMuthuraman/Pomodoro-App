@@ -31,11 +31,10 @@ main{
     flex-flow: row;
 }
 div.selected{
-    width:253px;
-    margin:1px;
+    background-color: transparent;
     /* border-radius:8px; */
 }
-div.unselected{
+.tab{
     width:253px;
     margin:1px;
     background-color: #fff8de80; 
@@ -48,7 +47,7 @@ div.tab:last-child{
     border-top-right-radius: 8px;
 }
 .timer{
-    font-size: 250px;
+    font-size: 200px;
     /* color: black; */
     -webkit-text-stroke: 3.5px #000000dd;
     display: flex;
@@ -67,4 +66,12 @@ button{
     border:none;
     border-radius: 8px;
 }
-
+#btn-stop{
+    display: none;
+}
+#btn-continue{
+    display: none;
+}
+#btn-pause{
+    display: none;
+}
