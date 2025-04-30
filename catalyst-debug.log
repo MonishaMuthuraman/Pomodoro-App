@@ -1,0 +1,107 @@
+[debug] [2024-11-30T16:54:04.150Z] : 
+[debug] [2024-11-30T16:54:04.153Z] : ----------------------------------------------------------------------
+[debug] [2024-11-30T16:54:04.153Z] : Command:      C:\Program Files\nodejs\node.exe C:\Users\Nishanthini\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\bin\catalyst.js init
+[debug] [2024-11-30T16:54:04.154Z] : CLI Version:  1.17.6
+[debug] [2024-11-30T16:54:04.154Z] : Platform:     win32
+[debug] [2024-11-30T16:54:04.155Z] : Node Version: v20.12.0
+[debug] [2024-11-30T16:54:04.155Z] : Time:         Sat Nov 30 2024 22:24:04 GMT+0530 (India Standard Time)
+[debug] [2024-11-30T16:54:04.155Z] : ----------------------------------------------------------------------
+[debug] [2024-11-30T16:54:04.156Z] : 
+[debug] [2024-11-30T16:54:05.558Z] : > authorizing via signed-in user option
+[debug] [2024-11-30T16:54:05.558Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.projects.ALL","Stratus.sdkop.CREATE","Stratus.sdkop.READ","ZohoCatalyst.project.import.CREATE"]
+[info] [2024-11-30T16:54:05.581Z] : 
+      ___  
+      \  \     ____           _             _                 _   
+   ___ \  \   / ___|   __ _  | |_    __ _  | |  _   _   ___  | |_ 
+  /  / /  /  | |      / _` | | __|  / _` | | | | | | | / __| | __|
+ /  / /__/   | |___  | (_| | | |_  | (_| | | | | |_| | \__ \ | |_ 
+ \  \         \____|  \__,_|  \__|  \__,_| |_|  \__, | |___/  \__|
+  \__\                                          |___/       
+
+You're about to initialize a Catalyst project in this directory:
+
+  D:\Pomodoro App
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
+[debug] [2024-11-30T16:54:16.368Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/orgs 
+
+[debug] [2024-11-30T16:54:16.839Z] : <<<< HTTP RESPONSE : 500
+Response Headers: {"server":"ZGS","date":"Sat, 30 Nov 2024 16:54:16 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=7c58023b2365c117e2ff9b6feb09efa2; Path=/; Secure; HttpOnly","ZD_CSRF_TOKEN=43a81ff3-a4ef-4196-95f0-0a4e385093df;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=43a81ff3-a4ef-4196-95f0-0a4e385093df;path=/;SameSite=Strict;Secure;priority=high"],"x-content-type-options":"nosniff","x-xss-protection":"1","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[debug] [2024-11-30T16:54:16.842Z] : Response Body : {"status":"failure","data":{"message":"Internal server error has occurred. Please try again after some time","error_code":"INTERNAL_SERVER_ERROR"}}
+
+[error] [2024-11-30T16:54:16.850Z] : × HTTP Error: 500, Internal server error has occurred. Please try again after some time
+[debug] [2024-11-30T16:54:16.850Z] : Error Stack: CatalystError: HTTP Error: 500, Internal server error has occurred. Please try again after some time
+    at exports.default (C:\Users\Nishanthini\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\errorResponse.js:25:12)
+    at API._parseResponse (C:\Users\Nishanthini\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\internal\api.js:145:60)
+    at API.<anonymous> (C:\Users\Nishanthini\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\internal\api.js:226:38)
+    at Generator.next (<anonymous>)
+    at C:\Users\Nishanthini\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\internal\api.js:31:71
+    at new Promise (<anonymous>)
+    at __awaiter (C:\Users\Nishanthini\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\internal\api.js:27:12)
+    at Request.<anonymous> (C:\Users\Nishanthini\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\internal\api.js:224:53)
+    at Request.emit (node:events:530:35)
+    at Request.<anonymous> (C:\Users\Nishanthini\AppData\Roaming\npm\node_modules\zcatalyst-cli\node_modules\request\request.js:1154:10)
+[debug] [2024-11-30T16:54:16.851Z] : Error Context: {
+  "body": {
+    "status": "failure",
+    "data": {
+      "message": "Internal server error has occurred. Please try again after some time",
+      "error_code": "INTERNAL_SERVER_ERROR"
+    }
+  },
+  "response": {
+    "statusCode": 500,
+    "body": {
+      "status": "failure",
+      "data": {
+        "message": "Internal server error has occurred. Please try again after some time",
+        "error_code": "INTERNAL_SERVER_ERROR"
+      }
+    },
+    "headers": {
+      "server": "ZGS",
+      "date": "Sat, 30 Nov 2024 16:54:16 GMT",
+      "content-type": "application/vnd.catalyst.v2+json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "zalb_3a750b85f1=7c58023b2365c117e2ff9b6feb09efa2; Path=/; Secure; HttpOnly",
+        "ZD_CSRF_TOKEN=43a81ff3-a4ef-4196-95f0-0a4e385093df;path=/;SameSite=None;Secure;priority=high",
+        "_zcsr_tmp=43a81ff3-a4ef-4196-95f0-0a4e385093df;path=/;SameSite=Strict;Secure;priority=high"
+      ],
+      "x-content-type-options": "nosniff",
+      "x-xss-protection": "1",
+      "cache-control": "private,no-cache,no-store,max-age=0,must-revalidate",
+      "pragma": "no-cache",
+      "expires": "Thu, 01 Jan 1970 00:00:00 GMT",
+      "x-frame-options": "DENY",
+      "strict-transport-security": "max-age=63072000"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "api.catalyst.zoho.in",
+        "port": 443,
+        "hostname": "api.catalyst.zoho.in",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/baas/v1/orgs",
+        "path": "/baas/v1/orgs",
+        "href": "https://api.catalyst.zoho.in/baas/v1/orgs"
+      },
+      "method": "GET"
+    }
+  }
+}
+[debug] [2024-11-30T16:54:16.851Z] : Error Status: 500
+[info] [2024-11-30T16:54:16.852Z] : Kindly contact Catalyst support [support@zohocatalyst.com] if you need any further assistance
+[debug] [2024-11-30T16:54:16.853Z] : EXEC ENDED with event: Error (Unexpected), message: HTTP Error: 500, Internal server error has occurred. Please try again after some time
+[debug] [2024-11-30T16:54:16.854Z] : TOTAL DURATION OF COMMAND EXEC : 11307
+[debug] [2024-11-30T16:54:16.855Z] : Unable to initialise the log API

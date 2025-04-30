@@ -71,6 +71,7 @@ function StopTimer(){
 }
 
 function UpdateTab(tabId){
+    isPaused = false;
     clearInterval(intervalId);
     document.getElementById('btn-start').style.display = 'inline-flex';
     document.getElementById('btn-stop').style.display = 'none';
@@ -133,4 +134,35 @@ function StartTimer(min,sec){
         UpdateScreen(pomoTime.min,pomoTime.sec);
     }
     },1000)
+}
+
+// setInterval(BGChange,1000);
+
+// function BGChange(){
+//     let randomColor = "#" + Math.floor(Math.random() * (12560038-10926783)+10926783).toString(16);
+//     document.querySelector('body').style.transition = 'backgroundColor 1s ease 1s';
+//     document.querySelector('body').style.backgroundColor = randomColor; 
+//     console.log(getComputedStyle(document.querySelector('body')).transition); 
+// } 
+
+// //12560038
+// //10926783
+
+// setInterval(BGChange, 1000);
+
+function BGChange() {
+    // Generate a random color in hex format
+    let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+    
+    // Select the body element
+    const body = document.querySelector('body');
+    
+    // Apply the transition property to ensure a smooth background color change
+    body.style.transition = 'background-color 1s ease';
+    
+    // Change the background color
+    body.style.backgroundColor = randomColor;
+    
+    // Log the transition property to the console
+    console.log(getComputedStyle(body).transition);
 }
