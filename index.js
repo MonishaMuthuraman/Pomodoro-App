@@ -12,7 +12,7 @@
     // document.querySelector('.js-tab'+i).classList.add('selected');
 // }
 var pomoTime={
-    min:25,
+    min:50,
     sec:60
 };
 var intervalId;
@@ -22,13 +22,13 @@ function UpdateTimer(min,sec){
     pomoTime.sec = sec;
     UpdateScreen(pomoTime.min,pomoTime.sec);
 };
-document.querySelector('.timer').innerHTML = '25:00';
+document.querySelector('.timer').innerHTML = '50:00';
 document.querySelector('.js-tab0').addEventListener('click',()=>{
-    UpdateTimer(25,60);
+    UpdateTimer(50,60);
     UpdateTab(0);
 });
 document.querySelector('.js-tab1').addEventListener('click',()=>{
-    UpdateTimer(5,60);
+    UpdateTimer(10,60);
     UpdateTab(1);
 });
 document.querySelector('.js-tab2').addEventListener('click',()=>{
@@ -58,11 +58,11 @@ function StopTimer(){
         document.getElementById('btn-continue').style.display = 'none';
         if(document.querySelector('.js-tab0').classList.contains('selected')){
             clearInterval(intervalId);
-            UpdateTimer(25,60);
+            UpdateTimer(50,60);
         }
         else if(document.querySelector('.js-tab1').classList.contains('selected')){
             clearInterval(intervalId);
-            UpdateTimer(5,60);
+            UpdateTimer(10,60);
         }
         else if(document.querySelector('.js-tab2').classList.contains('selected')){
             clearInterval(intervalId);
@@ -92,10 +92,10 @@ document.getElementById('btn-start').onclick = function(){
         document.getElementById('btn-pause').style.display = 'inline-flex';
         document.getElementById('btn-continue').style.display = 'none';
         if(document.querySelector('.js-tab0').classList.contains('selected')){
-            StartTimer(25,60);
+            StartTimer(50,60);
         }
         else if(document.querySelector('.js-tab1').classList.contains('selected')){
-            StartTimer(5,60);
+            StartTimer(10,60);
         }
         else if(document.querySelector('.js-tab2').classList.contains('selected')){
             StartTimer(15,60);
