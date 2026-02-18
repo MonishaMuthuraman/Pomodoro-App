@@ -1,18 +1,5 @@
-// const pomodoroTab = document.querySelector('.js-pomodoro');
-// // pomodoroTab.addEventListener('click',()=>{
-// //     console.log('clicked');
-// // })
-// pomodoroTab.onclick=function(){
-//     pomodoroTab.setAttribute('className','selected')
-// };
-// for(let i=0;i<3;i++){
-//     document.querySelector('.js-tab'+i).addEventListener('click',()=>{
-
-//     })
-    // document.querySelector('.js-tab'+i).classList.add('selected');
-// }
 var pomoTime={
-    min:50,
+    min:49,
     sec:60
 };
 var intervalId;
@@ -24,15 +11,15 @@ function UpdateTimer(min,sec){
 };
 document.querySelector('.timer').innerHTML = '50:00';
 document.querySelector('.js-tab0').addEventListener('click',()=>{
-    UpdateTimer(50,60);
+    UpdateTimer(pomoTime.min,pomoTime.sec);
     UpdateTab(0);
 });
 document.querySelector('.js-tab1').addEventListener('click',()=>{
-    UpdateTimer(10,60);
+    UpdateTimer(9,60);
     UpdateTab(1);
 });
 document.querySelector('.js-tab2').addEventListener('click',()=>{
-    UpdateTimer(15,60);
+    UpdateTimer(14,60);
     UpdateTab(2);
 });
 
@@ -58,15 +45,15 @@ function StopTimer(){
         document.getElementById('btn-continue').style.display = 'none';
         if(document.querySelector('.js-tab0').classList.contains('selected')){
             clearInterval(intervalId);
-            UpdateTimer(50,60);
+            UpdateTimer(pomoTime.min,60);
         }
         else if(document.querySelector('.js-tab1').classList.contains('selected')){
             clearInterval(intervalId);
-            UpdateTimer(10,60);
+            UpdateTimer(9,60);
         }
         else if(document.querySelector('.js-tab2').classList.contains('selected')){
             clearInterval(intervalId);
-            UpdateTimer(15,60);
+            UpdateTimer(14,60);
         }
 }
 
@@ -92,13 +79,13 @@ document.getElementById('btn-start').onclick = function(){
         document.getElementById('btn-pause').style.display = 'inline-flex';
         document.getElementById('btn-continue').style.display = 'none';
         if(document.querySelector('.js-tab0').classList.contains('selected')){
-            StartTimer(50,60);
+            StartTimer(pomoTime.min,60);
         }
         else if(document.querySelector('.js-tab1').classList.contains('selected')){
-            StartTimer(10,60);
+            StartTimer(9,60);
         }
         else if(document.querySelector('.js-tab2').classList.contains('selected')){
-            StartTimer(15,60);
+            StartTimer(14,60);
         }
 };
 document.getElementById('btn-stop').onclick = function(){
@@ -116,24 +103,21 @@ document.getElementById('btn-continue').onclick = function(){
 };    
 
 function StartTimer(min,sec){
-        pomoTime.min -= 1;
-        intervalId = setInterval(()=>{
-        if(!isPaused){
-        pomoTime.sec -= 1;
-        if(pomoTime.sec===0 && pomoTime.min>0){
-            pomoTime.min -= 1;
-            pomoTime.sec=60;
-        }
-        else if(pomoTime.min=== 0 && pomoTime.sec===0){
-            var audiointervalId = setInterval(document.getElementById('audio').play(),5);
-            clearInterval(intervalId);
+    if(!isPaused){
+        let startTime = Date.now();
+    // console.log(startTime);
+    setInterval(()=>{
+        let elapsedTime = Date.now();
+        let timeDiff = Math.floor((elapsedTime-startTime)/1000);
+        let secdiff = sec - (timeDiff%60);
+        let minDiff = min - Math.floor((timeDiff/60));
+        if(minDiff===0){
             StopTimer();
-            UpdateTimer(min,sec);
-            clearInterval(audiointervalId);
         }
-        UpdateScreen(pomoTime.min,pomoTime.sec);
+        UpdateScreen(minDiff,secdiff);
+        // console.log(minDiff);
+    },1000);
     }
-    },1000)
 }
 
 // setInterval(BGChange,1000);
